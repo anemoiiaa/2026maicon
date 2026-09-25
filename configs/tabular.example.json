@@ -1,0 +1,39 @@
+{
+  "status": "design_only",
+  "task": "classification",
+  "seed": 42,
+  "train_path": "data/train.csv",
+  "test_path": "data/test.csv",
+  "sample_submission_path": "data/sample_submission.csv",
+  "target_column": "target",
+  "id_column": "id",
+  "split": {
+    "strategy": "stratified",
+    "validation_fraction": 0.2,
+    "group_column": null,
+    "time_column": null
+  },
+  "features": {
+    "numeric_columns": [],
+    "categorical_columns": []
+  },
+  "model": {
+    "name": "logistic_regression"
+  },
+  "metric": {
+    "name": "accuracy",
+    "greater_is_better": true
+  },
+  "prediction": {
+    "kind": "label",
+    "class_order": null
+  },
+  "submission": {
+    "columns": [
+      "id",
+      "target"
+    ],
+    "output_path": "outputs/submission.csv"
+  },
+  "time_budget_seconds": 600
+}
