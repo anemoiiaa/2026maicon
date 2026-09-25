@@ -1,10 +1,8 @@
-# 검증 계획
+# 실행 검증
 
-현재 자동 테스트는 없습니다. 실행 코드 구현 후 다음 위험을 검증합니다.
+`python -m pip install -r requirements-dev.txt` 후 다음을 실행합니다.
 
-- 검증 데이터만 바뀌어도 학습 전처리 통계는 변하지 않는가?
-- 같은 그룹 또는 겹치는 센서 구간이 학습/검증에 섞이지 않는가?
-- 예측과 ID 순서가 일치하는가?
-- 클래스 순서가 확률 열과 일치하는가?
-- 제출 규격의 행·열·결측 조건을 위반하면 저장 전에 실패하는가?
-- 새 커널에서 Notebook을 전체 실행할 수 있는가?
+- `python tests/run_notebooks.py`: nbformat 검증 및 23개 기본/설정 분기 실행
+- `python tests/test_contracts.py`: 9개 누수·분할·제출·실제 CSV 모드 계약 검사
+
+첫 명령은 Notebook 코드 셀을 순서대로 추출하여 독립 Python 프로세스와 임시 디렉토리에서 실행합니다. 실제 Jupyter 커널의 UI 동작 검증은 아닙니다. 실행 로그는 outputs/validation에 저장되고 git에서 제외됩니다. YOLO 사례는 기본 비활성 분기만 실행합니다.

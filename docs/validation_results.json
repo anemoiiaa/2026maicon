@@ -1,0 +1,157 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "sklearn": "1.8.0",
+    "matplotlib": "3.10.8",
+    "PIL": "12.3.0",
+    "nbformat": "5.11.1"
+  },
+  "execution_method": "Notebook code cells in isolated Python processes; nbformat schema validation",
+  "cases": [
+    {
+      "notebook": "notebooks/01_tabular/01_EDA.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.81
+    },
+    {
+      "notebook": "notebooks/01_tabular/02_supervised.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.71
+    },
+    {
+      "notebook": "notebooks/01_tabular/03_anomaly_clustering.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.49
+    },
+    {
+      "notebook": "notebooks/02_time_series/01_EDA.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.54
+    },
+    {
+      "notebook": "notebooks/02_time_series/02_forecasting.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 2.05
+    },
+    {
+      "notebook": "notebooks/02_time_series/03_sensor_windows.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.45
+    },
+    {
+      "notebook": "notebooks/03_text/01_EDA.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.39
+    },
+    {
+      "notebook": "notebooks/03_text/02_supervised.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.39
+    },
+    {
+      "notebook": "notebooks/03_text/03_clustering.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.3
+    },
+    {
+      "notebook": "notebooks/04_image/01_EDA.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.58
+    },
+    {
+      "notebook": "notebooks/04_image/02_classification.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.51
+    },
+    {
+      "notebook": "notebooks/04_image/03_detection_cpu.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 1.54
+    },
+    {
+      "notebook": "notebooks/04_image/04_yolo_optional.ipynb",
+      "case": "default",
+      "status": "passed",
+      "seconds": 0.25
+    },
+    {
+      "notebook": "notebooks/01_tabular/02_supervised.ipynb",
+      "case": "regression",
+      "status": "passed",
+      "seconds": 1.47
+    },
+    {
+      "notebook": "notebooks/01_tabular/02_supervised.ipynb",
+      "case": "probability",
+      "status": "passed",
+      "seconds": 1.55
+    },
+    {
+      "notebook": "notebooks/01_tabular/03_anomaly_clustering.ipynb",
+      "case": "clustering",
+      "status": "passed",
+      "seconds": 1.42
+    },
+    {
+      "notebook": "notebooks/02_time_series/03_sensor_windows.ipynb",
+      "case": "regression",
+      "status": "passed",
+      "seconds": 1.6
+    },
+    {
+      "notebook": "notebooks/02_time_series/03_sensor_windows.ipynb",
+      "case": "anomaly",
+      "status": "passed",
+      "seconds": 1.49
+    },
+    {
+      "notebook": "notebooks/03_text/02_supervised.ipynb",
+      "case": "regression",
+      "status": "passed",
+      "seconds": 1.43
+    },
+    {
+      "notebook": "notebooks/03_text/02_supervised.ipynb",
+      "case": "word",
+      "status": "passed",
+      "seconds": 1.37
+    },
+    {
+      "notebook": "notebooks/03_text/02_supervised.ipynb",
+      "case": "probability",
+      "status": "passed",
+      "seconds": 1.37
+    },
+    {
+      "notebook": "notebooks/04_image/02_classification.ipynb",
+      "case": "histogram",
+      "status": "passed",
+      "seconds": 1.38
+    },
+    {
+      "notebook": "notebooks/04_image/02_classification.ipynb",
+      "case": "gradient",
+      "status": "passed",
+      "seconds": 1.45
+    }
+  ],
+  "contract_tests": {
+    "passed": 9
+  },
+  "yolo_training_tested": false
+}

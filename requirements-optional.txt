@@ -1,0 +1,3 @@
+# 필요한 경로만 별도 환경에서 설치. 기본 Notebook에는 필요하지 않습니다.
+pyarrow>=14
+ultralytics>=8.3,<9
