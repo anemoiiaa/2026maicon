@@ -70,6 +70,22 @@ class Contracts(unittest.TestCase):
                 if not configured:source+='\n'+ '\n'.join(f'{k}={v!r}' for k,v in overrides.items());configured=True
                 exec(compile(source,'real_csv_cell','exec'),scope)
             self.assertEqual(pd.read_csv(directory/'out.csv').id.tolist(),['x','y','z'])
+            # 라벨 없는 실제 CSV: 정형 이상탐지와 텍스트 군집 모두 target 없이 실행
+            for relative,is_text in [('notebooks/01_tabular/03_anomaly_clustering.ipynb',False),('notebooks/03_text/03_clustering.ipynb',True)]:
+                unlabeled=train.drop(columns='target').copy();future=test.copy()
+                if is_text:
+                    unlabeled['text']=['normal equipment' if i%2 else 'maintenance warning' for i in range(len(unlabeled))]
+                    future['text']=['equipment normal','warning repair','maintenance']
+                unlabeled.to_csv(directory/'train.csv',index=False);future.to_csv(directory/'test.csv',index=False)
+                workflow=json.loads((ROOT/relative).read_text());scope={};configured=False
+                for cell in workflow['cells']:
+                    if cell['cell_type']!='code':continue
+                    source=cell['source']
+                    if not configured:
+                        source+='\n'+ '\n'.join(f'{k}={v!r}' for k,v in {**overrides,'SAMPLE_PATH':None}.items());configured=True
+                    exec(compile(source,'unlabeled_csv_cell','exec'),scope)
+                self.assertEqual(len(pd.read_csv(directory/'out.csv')),3)
+
 
     def test_forecast_never_uses_future_truth(self):
         forecast=json.loads((ROOT/'notebooks/02_time_series/02_forecasting.ipynb').read_text())
